@@ -1,0 +1,667 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{64E35CEA-F949-44BC-B9F0-0D2C11F3AC01}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ConsoleApplication8</RootNamespace>
+    <AssemblyName>ConsoleApplication8</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ejml-0.23, Version=0.23.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stanford.NLP.CoreNLP.3.5.2.1\lib\ejml-0.23.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IKVM.AWT.WinForms, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.AWT.WinForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Beans, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Beans.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Charsets, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Charsets.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Cldrdata, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Cldrdata.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Corba, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Corba.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Core, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Jdbc, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Jdbc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Localedata, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Localedata.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Management, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Management.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Media, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Media.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Misc, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Misc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Naming, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Naming.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Nashorn, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Nashorn.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Remoting, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Remoting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Security, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.SwingAWT, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.SwingAWT.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Text, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Text.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Tools, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Tools.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Util, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.Util.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.API, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.XML.API.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Bind, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.XML.Bind.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Crypto, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.XML.Crypto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Parse, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.XML.Parse.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Transform, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.XML.Transform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.WebServices, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.XML.WebServices.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.XPath, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.OpenJDK.XML.XPath.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IKVM.Runtime, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IKVM.Runtime.JNI, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.Runtime.JNI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="javax.json, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stanford.NLP.CoreNLP.3.5.2.1\lib\javax.json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="joda-time, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stanford.NLP.CoreNLP.3.5.2.1\lib\joda-time.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="jollyday, Version=0.4.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stanford.NLP.CoreNLP.3.5.2.1\lib\jollyday.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="stanford-corenlp-3.5.2, Version=3.5.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stanford.NLP.CoreNLP.3.5.2.1\lib\stanford-corenlp-3.5.2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="xom, Version=1.2.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stanford.NLP.CoreNLP.3.5.2.1\lib\xom.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="InteractClass.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="stanford-corenlp-full-2015-04-20\corenlp.sh" />
+    <None Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src.zip" />
+    <None Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\docs\latex\ManualEJML.tex" />
+    <None Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\docs\logo\EJML_logo.pdf" />
+    <None Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\docs\logo\EJML_logo.pptx" />
+    <None Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\docs\ManualEJML.pdf" />
+    <None Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\ejml.iml" />
+    <None Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\EJML.ipr" />
+    <None Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\EJML.iws" />
+    <None Include="stanford-corenlp-full-2015-04-20\LIBRARY-LICENSES" />
+    <None Include="stanford-corenlp-full-2015-04-20\Makefile" />
+    <None Include="stanford-corenlp-full-2015-04-20\patterns\example.properties" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\dcoref\coref.properties" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\dcoref\coref.dict1.tsv" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\dcoref\coref.dict2.tsv" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\dcoref\coref.dict3.tsv" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\dcoref\coref.dict4.tsv" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\dcoref\countries" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\dcoref\gender.data.gz" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\dcoref\gender.map.ser.gz" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\dcoref\singleton.predictor.ser" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\dcoref\statesandprovinces" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\gender\first_name_map_small" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\lexparser\englishPCFG.ser.gz" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\lexparser\englishRNN.ser.gz" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\ner\english.all.3class.distsim.crf.ser.gz" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\ner\english.all.3class.distsim.prop" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\ner\english.conll.4class.distsim.crf.ser.gz" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\ner\english.conll.4class.distsim.prop" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\ner\english.muc.7class.distsim.crf.ser.gz" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\ner\english.muc.7class.distsim.prop" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\parser\nndep\CTB_CoNLL_params.txt.gz" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\parser\nndep\english_SD.gz" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\parser\nndep\english_UD.gz" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\parser\nndep\PTB_CoNLL_params.txt.gz" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\parser\nndep\wsj_SD.gz" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\pos-tagger\english-bidirectional\english-bidirectional-distsim.tagger" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\pos-tagger\english-bidirectional\english-bidirectional-distsim.tagger.props" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\pos-tagger\english-left3words\english-left3words-distsim.tagger" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\pos-tagger\english-left3words\english-left3words-distsim.tagger.props" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\regexner\type_map_clean" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\sentiment\sentiment.binary.ser.gz" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\sentiment\sentiment.ser.gz" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\supervised_relation_extractor\roth_relation_model_pipelineNER.ser" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\truecase\MixDisambiguation.list" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\truecase\truecasing.fast.caseless.prop" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\truecase\truecasing.fast.caseless.qn.ser.gz" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\truecase\truecasing.fast.prop" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\truecase\truecasing.fast.qn.ser.gz" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\upos\ENUniversalPOS.tsurgeon" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\pipeline\StanfordCoreNLP.properties" />
+    <None Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\META-INF\MANIFEST.MF" />
+    <None Include="stanford-corenlp-full-2015-04-20\StanfordDependenciesManual.pdf" />
+    <None Include="stanford-corenlp-full-2015-04-20\tokensregex\color.properties" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\experimental\src\org\ejml\alg\dense\decomposition\chol\" />
+    <Folder Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\experimental\src\org\ejml\alg\dense\decomposition\qr\" />
+    <Folder Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\experimental\src\org\ejml\alg\dense\linsol\" />
+    <Folder Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\experimental\src\org\ejml\alg\dense\mult\" />
+    <Folder Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\experimental\src\org\ejml\alg\generic\" />
+    <Folder Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\experimental\src\org\ejml\ops\" />
+    <Folder Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\experimental\test\org\ejml\alg\dense\mult\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="stanford-corenlp-full-2015-04-20\build.xml" />
+    <Content Include="stanford-corenlp-full-2015-04-20\CoreNLP-to-HTML.xsl" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\alg\block\BenchmarkBlockTranspose.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\alg\dense\decomposition\bidiagonal\BenchmarkBidiagonalDecomposition.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\alg\dense\decomposition\bidiagonal\StabilityBidiagonalDecomposition.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\alg\dense\decomposition\chol\BenchmarkCholeskyDecomposition.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\alg\dense\decomposition\chol\StabilityCholeksyDecomposition.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\alg\dense\decomposition\eig\BenchmarkEigenDecomposition.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\alg\dense\decomposition\eig\RealEigenDecompositionStressTest.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\alg\dense\decomposition\eig\symm\BenchmarkSymmetricEigenDecomposition.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\alg\dense\decomposition\eig\symm\StabilitySymmEigen.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\alg\dense\decomposition\eig\symm\SymmetricEigenStressTest.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\alg\dense\decomposition\eig\watched\WatchDoubleStepQR.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\alg\dense\decomposition\hessenberg\BenchmarkHessenberg.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\alg\dense\decomposition\hessenberg\BenchmarkTridiagonal.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\alg\dense\decomposition\hessenberg\StabilityTridiagonal.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\alg\dense\decomposition\lu\BenchmarkLuDecomposition.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\alg\dense\decomposition\qr\BenchmarkQrDecomposition.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\alg\dense\decomposition\qr\StabilityQRDecomposition.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\alg\dense\decomposition\svd\BenchmarkSvd.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\alg\dense\decomposition\svd\StabilitySvdlDecomposition.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\alg\dense\linsol\BenchmarkInverseStability.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\alg\dense\linsol\BenchmarkInvertSquare.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\alg\dense\linsol\BenchmarkInvertSymPosDef.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\alg\dense\linsol\BenchmarkRectSolve.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\alg\dense\linsol\BenchmarkSolveEq.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\alg\dense\linsol\BenchmarkSolveOver.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\alg\dense\linsol\BenchmarkSolvePseudoInverse.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\alg\dense\linsol\BenchmarkSolveSymPosDef.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\alg\dense\misc\BenchmarkDeterminant.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\alg\dense\misc\BenchmarkImplCommonOps.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\alg\dense\misc\BenchmarkTranspose.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\alg\dense\mult\BenchmarkMatrixMatrixMult.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\alg\dense\mult\BenchmarkMatrixMatrixMultAdd.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\alg\dense\mult\BenchmarkMatrixMatrixMultTransA.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\alg\dense\mult\BenchmarkMatrixMatrixMultTransAB.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\alg\dense\mult\BenchmarkMatrixMultAccessors.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\alg\dense\mult\BenchmarkMatrixMultProduct.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\alg\dense\mult\BenchmarkMatrixVectorOps.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\BenchmarkElement.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\BenchmarkGenerics.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\BenchmarkInheritanceCall.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\BenchmarkInliningGetSet.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\BenchmarkInstanceOf.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\data\BenchmarkFunctionReturn.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\ops\BenchmarkEquality.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\ops\BenchmarkMultAndAddOps.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\src\org\ejml\ops\BenchmarkVariousOps.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\benchmarks\test\org\ejml\alg\dense\decompose\eig\RealEigenvalueHessenbergStressTest.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\build.xml" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\change.txt" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\design_notes.txt" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\docs\logo\ejml_icon.gif" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\docs\logo\ejml_logo.gif" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\docs\logo\ejml_logo_153x51.gif" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\docs\release-checklist.txt" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\examples\build.xml" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\examples\readme.txt" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\examples\src\org\ejml\example\BenchmarkKalmanPerformance.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\examples\src\org\ejml\example\ExampleMatrixIO.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\examples\src\org\ejml\example\KalmanFilter.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\examples\src\org\ejml\example\KalmanFilterAlg.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\examples\src\org\ejml\example\KalmanFilterOps.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\examples\src\org\ejml\example\KalmanFilterSimple.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\examples\src\org\ejml\example\LevenbergMarquardt.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\examples\src\org\ejml\example\PolynomialFit.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\examples\src\org\ejml\example\PolynomialRootFinder.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\examples\src\org\ejml\example\PrincipleComponentAnalysis.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\examples\src\org\ejml\example\QRExampleOps.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\examples\src\org\ejml\example\QRExampleSimple.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\examples\src\org\ejml\example\StatisticsMatrix.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\examples\test\org\ejml\example\TestCompareKalmanResults.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\examples\test\org\ejml\example\TestLevenbergMarquardt.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\examples\test\org\ejml\example\TestPolynomialFit.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\examples\test\org\ejml\example\TestPolynomialRootFinder.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\examples\test\org\ejml\example\TestPrincipleComponentAnalysis.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\examples\test\org\ejml\example\TestQRExampleOps.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\examples\test\org\ejml\example\TestQRExampleSimple.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\experimental\src\org\ejml\alg\blockd3\BlockD3MatrixOps.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\experimental\src\org\ejml\alg\densed2\mult\MatrixMatrixMult_D2.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\experimental\src\org\ejml\alg\dense\decomposition\lu\LUDecompositionNR.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\experimental\src\org\ejml\alg\dense\decomposition\svd\SmartRotatorUpdate.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\experimental\src\org\ejml\alg\dense\decomposition\svd\SvdImplicitQrAlgorithmSmart.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\experimental\src\org\ejml\alg\dense\decomposition\svd\SvdImplicitQrDecompose_Ultimate.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\experimental\src\org\ejml\alg\dense\decomposition\svd\SvdImplicitQrDecompose_UltimateS.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\experimental\src\org\ejml\data\BlockD3Matrix64F.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\experimental\src\org\ejml\data\DenseD2Matrix64F.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\experimental\test\org\ejml\alg\blockd3\TestBlockD3MatrixOps.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\experimental\test\org\ejml\alg\dense\decompose\lu\TestLUDecompositionNR.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\experimental\test\org\ejml\data\TestBlockD3Matrix64F.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\experimental\test\org\ejml\data\TestDenseD2Matrix64F.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\lib\junit-4.11.jar" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\license.txt" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\pom.xml" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\README.TXT" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\block\BlockInnerMultiplication.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\block\BlockInnerRankUpdate.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\block\BlockInnerTriangularSolver.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\block\BlockMatrixOps.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\block\BlockMultiplication.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\block\BlockTriangularSolver.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\block\BlockVectorOps.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\block\decomposition\bidiagonal\BidiagonalHelper.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\block\decomposition\chol\BlockCholeskyOuterForm.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\block\decomposition\chol\BlockInnerCholesky.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\block\decomposition\hessenberg\TridiagonalBlockHelper.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\block\decomposition\hessenberg\TridiagonalDecompositionBlockHouseholder.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\block\decomposition\qr\BlockHouseHolder.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\block\decomposition\qr\BlockMatrix64HouseholderQR.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\block\GeneratorBlockInnerMultiplication.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\block\linsol\chol\BlockCholeskyOuterSolver.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\block\linsol\qr\BlockQrHouseHolderSolver.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\BaseDecompositionBlock64.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\bidiagonal\BidiagonalDecomposition.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\bidiagonal\BidiagonalDecompositionNaive.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\bidiagonal\BidiagonalDecompositionRow.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\bidiagonal\BidiagonalDecompositionTall.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\chol\CholeskyBlockHelper.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\chol\CholeskyDecompositionBlock.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\chol\CholeskyDecompositionBlock64.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\chol\CholeskyDecompositionCommon.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\chol\CholeskyDecompositionInner.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\chol\CholeskyDecompositionLDL.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\eig\EigenPowerMethod.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\eig\EigenvalueExtractor.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\eig\EigenvalueSmall.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\eig\SwitchingEigenDecomposition.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\eig\SymmetricQRAlgorithmDecomposition.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\eig\symm\SymmetricQrAlgorithm.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\eig\symm\SymmetricQREigenHelper.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\eig\WatchedDoubleStepQRDecomposition.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\eig\watched\WatchedDoubleStepQREigen.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\eig\watched\WatchedDoubleStepQREigenvalue.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\eig\watched\WatchedDoubleStepQREigenvector.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\hessenberg\HessenbergSimilarDecomposition.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\hessenberg\TridiagonalDecompositionBlock.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\hessenberg\TridiagonalDecompositionHouseholder.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\hessenberg\TridiagonalDecompositionHouseholderOrig.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\hessenberg\TridiagonalSimilarDecomposition.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\lu\LUDecompositionAlt.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\lu\LUDecompositionBase.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\qr\QRColPivDecompositionHouseholderColumn.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\qr\QRDecompositionBlock64.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\qr\QRDecompositionHouseholder.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\qr\QRDecompositionHouseholderColumn.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\qr\QRDecompositionHouseholderTran.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\qr\QrHelperFunctions.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\qr\QrUpdate.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\svd\implicitqr\SvdImplicitQrAlgorithm.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\svd\SafeSvd.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\svd\SvdImplicitQrDecompose.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\decomposition\TriangularSolver.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\linsol\AdjustableLinearSolver.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\linsol\chol\LinearSolverChol.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\linsol\chol\LinearSolverCholBlock64.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\linsol\chol\LinearSolverCholLDL.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\linsol\InvertUsingSolve.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\linsol\LinearSolverAbstract.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\linsol\LinearSolverSafe.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\linsol\LinearSolverUnrolled.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\linsol\lu\LinearSolverLu.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\linsol\lu\LinearSolverLuBase.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\linsol\lu\LinearSolverLuKJI.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\linsol\qr\AdjLinearSolverQr.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\linsol\qr\BaseLinearSolverQrp.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\linsol\qr\LinearSolverQr.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\linsol\qr\LinearSolverQrBlock64.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\linsol\qr\LinearSolverQrHouse.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\linsol\qr\LinearSolverQrHouseCol.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\linsol\qr\LinearSolverQrHouseTran.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\linsol\qr\LinearSolverQrpHouseCol.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\linsol\qr\SolvePseudoInverseQrp.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\linsol\svd\SolvePseudoInverseSvd.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\linsol\WrapLinearSolverBlock64.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\misc\DeterminantFromMinor.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\misc\GenerateDeterminantFromMinor.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\misc\GenerateInverseFromMinor.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\misc\ImplCommonOps_DenseMatrix64F.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\misc\ImplCommonOps_Matrix64F.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\misc\NaiveDeterminant.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\misc\PermuteArray.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\misc\RrefGaussJordanRowPivot.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\misc\TransposeAlgs.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\misc\UnrolledDeterminantFromMinor.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\misc\UnrolledInverseFromMinor.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\mult\GeneratorMatrixMatrixMult.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\mult\MatrixDimensionException.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\mult\MatrixMatrixMult.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\mult\MatrixMultProduct.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\mult\MatrixVectorMult.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\mult\SubmatrixOps.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\dense\mult\VectorVectorMult.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\generic\CodeGeneratorMisc.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\alg\generic\GenericMatrixOps.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\data\BlockMatrix64F.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\data\Complex64F.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\data\D1Matrix64F.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\data\D1Submatrix64F.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\data\DenseMatrix64F.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\data\Eigenpair.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\data\Matrix64F.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\data\MatrixIterator.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\data\RowD1Matrix64F.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\EjmlParameters.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\factory\CholeskyDecomposition.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\factory\DecompositionFactory.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\factory\DecompositionInterface.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\factory\EigenDecomposition.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\factory\LinearSolver.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\factory\LinearSolverFactory.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\factory\LUDecomposition.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\factory\QRDecomposition.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\factory\QRPDecomposition.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\factory\ReducedRowEchelonForm.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\factory\SingularMatrixException.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\factory\SingularValueDecomposition.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\ops\CommonOps.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\ops\CovarianceOps.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\ops\CovarianceRandomDraw.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\ops\EigenOps.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\ops\EjmlUnitTests.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\ops\MatrixComponent.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\ops\MatrixFeatures.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\ops\MatrixIO.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\ops\MatrixVisualization.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\ops\NormOps.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\ops\RandomMatrices.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\ops\ReadCsv.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\ops\ReadMatrixCsv.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\ops\SingularOps.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\ops\SpecializedOps.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\simple\SimpleBase.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\simple\SimpleEVD.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\simple\SimpleMatrix.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\simple\SimpleSVD.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\org\ejml\UtilEjml.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\src\overview.html" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\block\decomposition\bidiagonal\TestBidiagonalHelper.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\block\decomposition\chol\TestBlockCholeskyOuterForm.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\block\decomposition\chol\TestBlockInnerCholesky.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\block\decomposition\hessenberg\TestTridiagonalBlockHelper.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\block\decomposition\hessenberg\TestTridiagonalDecompositionBlockHouseholder.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\block\decomposition\qr\GenericBlock64QrDecompositionTests.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\block\decomposition\qr\TestBlockHouseHolder.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\block\decomposition\qr\TestBlockMatrix64HouseholderQR.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\block\linsol\chol\TestBlockCholeskyOuterSolver.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\block\linsol\qr\TestBlockQrHouseHolderSolver.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\block\TestBlockInnerMultiplication.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\block\TestBlockInnerRankUpdate.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\block\TestBlockInnerTriangularSolver.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\block\TestBlockMatrixOps.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\block\TestBlockMultiplication.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\block\TestBlockTriangularSolver.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\block\TestBlockVectorOps.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\decomposition\bidiagonal\GenericBidiagonalCheck.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\decomposition\bidiagonal\TestBidiagonalDecompositionNaive.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\decomposition\bidiagonal\TestBidiagonalDecompositionRow.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\decomposition\bidiagonal\TestBidiagonalDecompositionTall.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\decomposition\CheckDecompositionInterface.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\decomposition\chol\GenericCholeskyTests.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\decomposition\chol\TestCholeskyDecompositionBlock.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\decomposition\chol\TestCholeskyDecompositionBlock64.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\decomposition\chol\TestCholeskyDecompositionInner.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\decomposition\chol\TestCholeskyDecompositionLDL.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\decomposition\eig\GeneralEigenDecompositionCheck.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\decomposition\eig\symm\TestSymmetricQrAlgorithm.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\decomposition\eig\TestEigenPowerMethod.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\decomposition\eig\TestSwitchingEigenDecomposition.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\decomposition\eig\TestSymmetricQRAlgorithmDecomposition.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\decomposition\eig\TestWatchedDoubleStepQRDecomposition.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\decomposition\hessenberg\StandardTridiagonalTests.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\decomposition\hessenberg\TestHessenbergSimilarDecomposition.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\decomposition\hessenberg\TestTridiagonalDecompositionBlock.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\decomposition\hessenberg\TestTridiagonalDecompositionHouseholder.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\decomposition\lu\GeneralLuDecompositionChecks.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\decomposition\lu\TestLUDecompositionAlt.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\decomposition\lu\TestLUDecompositionBase.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\decomposition\qr\GenericQrCheck.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\decomposition\qr\TestQRColPivDecompositionHouseholderColumn.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\decomposition\qr\TestQRDecompositionBlock64.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\decomposition\qr\TestQRDecompositionHouseholder.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\decomposition\qr\TestQRDecompositionHouseholderColumn.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\decomposition\qr\TestQRDecompositionHouseholderTran.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\decomposition\qr\TestQrUpdate.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\decomposition\svd\implicitqr\TestSvdImplicitQrAlgorithm.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\decomposition\svd\StandardSvdChecks.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\decomposition\svd\TestSafeSvd.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\decomposition\svd\TestSvdImplicitQrDecompose.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\decomposition\TestTriangularSolver.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\linsol\chol\BaseCholeskySolveTests.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\linsol\chol\TestLinearSolverChol.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\linsol\chol\TestLinearSolverCholBlock64.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\linsol\chol\TestLinearSolverCholLDL.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\linsol\GenericLinearSolverChecks.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\linsol\GenericSolvePseudoInverseChecks.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\linsol\lu\TestLinearSolverLu.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\linsol\lu\TestLinearSolverLuBase.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\linsol\lu\TestLinearSolverLuKJI.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\linsol\qr\TestAdjLinearSolverQr.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\linsol\qr\TestLinearSolverQr.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\linsol\qr\TestLinearSolverQrBlock64.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\linsol\qr\TestLinearSolverQrHouse.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\linsol\qr\TestLinearSolverQrHouseCol.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\linsol\qr\TestLinearSolverQrHouseTran.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\linsol\qr\TestSolveLinearSolverQrpHouseCol.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\linsol\qr\TestSolvePseudoInverseQrp.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\linsol\svd\TestSolvePseudoInverseSvd.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\linsol\TestInvertUsingSolve.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\linsol\TestLinearSolverAbstract.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\linsol\TestLinearSolverSafe.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\misc\GeneralReducedRowEchelonFormChecks.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\misc\TestDeterminantFromMinor.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\misc\TestImplCommonOps_DenseMatrix64F.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\misc\TestImplCommonOps_Matrix64F.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\misc\TestNaiveDeterminant.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\misc\TestPermuteArray.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\misc\TestRrefGaussJordanRowPivot.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\misc\TestTransposeAlgs.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\misc\TestUnrolledDeterminantFromMinor.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\misc\TestUnrolledInverseFromMinor.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\mult\CheckMatrixMultShape.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\mult\CheckMatrixVectorMultShape.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\mult\TestMatrixMatrixMult.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\mult\TestMatrixMultProduct.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\mult\TestMatrixVectorMult.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\mult\TestSubmatrixOps.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\alg\dense\mult\TestVectorVectorMult.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\data\GenericTestsD1Matrix64F.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\data\GenericTestsMatrix64F.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\data\TestBlockMatrix64F.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\data\TestD1Submatrix64F.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\data\TestDenseMatrix64F.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\data\TestMatrixIterator.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\data\UtilTestMatrix.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\factory\TestDecompositionFactory.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\factory\TestLinearSolverFactory.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\ops\TestCommonOps.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\ops\TestCovarianceOps.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\ops\TestCovarianceRandomDraw.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\ops\TestEigenOps.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\ops\TestMatrixFeatures.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\ops\TestMatrixIO.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\ops\TestNormOps.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\ops\TestRandomMatrices.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\ops\TestReadMatrixCsv.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\ops\TestSingularOps.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\ops\TestSpecializedOps.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\simple\TestSimpleMatrix.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\test\org\ejml\TestUtilEjml.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23-src\ejml-0.23\TODO_Algorithms.txt" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ejml-0.23.jar" />
+    <Content Include="stanford-corenlp-full-2015-04-20\input.txt" />
+    <Content Include="stanford-corenlp-full-2015-04-20\input.txt.xml" />
+    <Content Include="stanford-corenlp-full-2015-04-20\javax.json-api-1.0-sources.jar" />
+    <Content Include="stanford-corenlp-full-2015-04-20\javax.json.jar" />
+    <Content Include="stanford-corenlp-full-2015-04-20\joda-time-2.1-sources.jar" />
+    <Content Include="stanford-corenlp-full-2015-04-20\joda-time.jar" />
+    <Content Include="stanford-corenlp-full-2015-04-20\jollyday-0.4.7-sources.jar" />
+    <Content Include="stanford-corenlp-full-2015-04-20\jollyday.jar" />
+    <Content Include="stanford-corenlp-full-2015-04-20\LICENSE.txt" />
+    <Content Include="stanford-corenlp-full-2015-04-20\patterns\goldnames.txt" />
+    <Content Include="stanford-corenlp-full-2015-04-20\patterns\goldplaces.txt" />
+    <Content Include="stanford-corenlp-full-2015-04-20\patterns\names.txt" />
+    <Content Include="stanford-corenlp-full-2015-04-20\patterns\otherpeople.txt" />
+    <Content Include="stanford-corenlp-full-2015-04-20\patterns\places.txt" />
+    <Content Include="stanford-corenlp-full-2015-04-20\patterns\presidents.txt" />
+    <Content Include="stanford-corenlp-full-2015-04-20\patterns\stopwords.txt" />
+    <Content Include="stanford-corenlp-full-2015-04-20\pom.xml" />
+    <Content Include="stanford-corenlp-full-2015-04-20\protobuf.jar" />
+    <Content Include="stanford-corenlp-full-2015-04-20\README.txt" />
+    <Content Include="stanford-corenlp-full-2015-04-20\SemgrexDemo.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\ShiftReduceDemo.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-javadoc.jar" />
+    <Content Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models.jar" />
+    <Content Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\dcoref\animate.unigrams.txt" />
+    <Content Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\dcoref\demonyms.txt" />
+    <Content Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\dcoref\female.unigrams.txt" />
+    <Content Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\dcoref\inanimate.unigrams.txt" />
+    <Content Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\dcoref\male.unigrams.txt" />
+    <Content Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\dcoref\namegender.combine.txt" />
+    <Content Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\dcoref\ne.signatures.txt" />
+    <Content Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\dcoref\neutral.unigrams.txt" />
+    <Content Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\dcoref\plural.unigrams.txt" />
+    <Content Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\dcoref\singular.unigrams.txt" />
+    <Content Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\dcoref\state-abbreviations.txt" />
+    <Content Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\sutime\defs.sutime.txt" />
+    <Content Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\sutime\english.holidays.sutime.txt" />
+    <Content Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\sutime\english.sutime.txt" />
+    <Content Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-models\edu\stanford\nlp\models\sutime\jollyday\Holidays_sutime.xml" />
+    <Content Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2-sources.jar" />
+    <Content Include="stanford-corenlp-full-2015-04-20\stanford-corenlp-3.5.2.jar" />
+    <Content Include="stanford-corenlp-full-2015-04-20\StanfordCoreNlpDemo.java" />
+    <Content Include="stanford-corenlp-full-2015-04-20\sutime\defs.sutime.txt" />
+    <Content Include="stanford-corenlp-full-2015-04-20\sutime\english.holidays.sutime.txt" />
+    <Content Include="stanford-corenlp-full-2015-04-20\sutime\english.sutime.txt" />
+    <Content Include="stanford-corenlp-full-2015-04-20\tokensregex\color.input.txt" />
+    <Content Include="stanford-corenlp-full-2015-04-20\tokensregex\color.rules.txt" />
+    <Content Include="stanford-corenlp-full-2015-04-20\tokensregex\retokenize.txt" />
+    <Content Include="stanford-corenlp-full-2015-04-20\xom-1.2.10-src.jar" />
+    <Content Include="stanford-corenlp-full-2015-04-20\xom.jar" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
